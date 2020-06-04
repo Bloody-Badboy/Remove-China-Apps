@@ -8,17 +8,17 @@ import com.chinaappsremover.dbhandler.DataBaseHelper;
 
 public class AppController extends Application {
     private static DataBaseHelper dataBaseHelper;
-    private static AppController instace;
+    private static AppController instance;
     private final String DEFAULT_PREF = "default_pref";
     private SharedPreferences default_prefs;
 
-    public static AppController getInstace() {
-        return instace;
+    public static AppController getInstance() {
+        return instance;
     }
 
     public void onCreate() {
         super.onCreate();
-        instace = this;
+        instance = this;
         default_prefs = getSharedPreferences(DEFAULT_PREF, Context.MODE_PRIVATE);
         dataBaseHelper = new DataBaseHelper(this);
     }

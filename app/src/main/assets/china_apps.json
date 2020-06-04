@@ -1,0 +1,518 @@
+[
+  {
+    "p_name": "app.buzz.share",
+    "a_name": "Helo"
+  },
+  {
+    "p_name": "app.buzz.share.lite",
+    "a_name": "Helo Lite"
+  },
+  {
+    "p_name": "com.lenovo.anyshare.gps",
+    "a_name": "SHAREit"
+  },
+  {
+    "p_name": "shareit.lite",
+    "a_name": "SHAREit Lite"
+  },
+  {
+    "p_name": "com.ushareit.watchit",
+    "a_name": "WATCHit"
+  },
+  {
+    "p_name": "com.zhiliaoapp.musically",
+    "a_name": "TikTok"
+  },
+  {
+    "p_name": "com.zhiliao.musically.livewallpaper",
+    "a_name": "TikTok Wall Picture"
+  },
+  {
+    "p_name": "com.ss.android.ugc.trill.go",
+    "a_name": "TikTok Lite"
+  },
+  {
+    "p_name": "com.kwai.video",
+    "a_name": "Kwai"
+  },
+  {
+    "p_name": "com.UCMobile.intl",
+    "a_name": "UCBrowser"
+  },
+  {
+    "p_name": "com.uc.browser.en",
+    "a_name": "UCBrowser Mini"
+  },
+  {
+    "p_name": "com.ucturbo",
+    "a_name": "UC Browser Turbo"
+  },
+  {
+    "p_name": "com.CricChat.intl",
+    "a_name": "UC Cricket"
+  },
+  {
+    "p_name": "com.live.royal",
+    "a_name": "LiveMe"
+  },
+  {
+    "p_name": "sg.bigo.live",
+    "a_name": "Bigo Live"
+  },
+  {
+    "p_name": "com.ss.android.ugc.boom",
+    "a_name": "Vigo Video"
+  },
+  {
+    "p_name": "com.ss.android.ugc.boom.livewallpaper",
+    "a_name": "Vigo Video Live Photo"
+  },
+  {
+    "p_name": "com.magicv.airbrush",
+    "a_name": "AirBrush: Easy Photo Editor"
+  },
+  {
+    "p_name": "com.commsource.beautyplus",
+    "a_name": "BeautyPlus"
+  },
+  {
+    "p_name": "com.meitu.makeup",
+    "a_name": "MakeupPlus"
+  },
+  {
+    "p_name": "com.mt.mtxx.mtxx",
+    "a_name": "Meitu "
+  },
+  {
+    "p_name": "com.meitu.meiyancamera",
+    "a_name": "BeautyCam"
+  },
+  {
+    "p_name": "com.meitu.oxygen",
+    "a_name": "O2Cam"
+  },
+  {
+    "p_name": "com.meitu.airvid",
+    "a_name": "AirVid Video Filters & Frames"
+  },
+  {
+    "p_name": "com.meitu.beautyplusme",
+    "a_name": "PlusMe Camera"
+  },
+  {
+    "p_name": "com.meitu.meipaimv",
+    "a_name": "Meipai"
+  },
+  {
+    "p_name": "com.beautyplus.pomelo.filters.photo",
+    "a_name": "Pomelo "
+  },
+  {
+    "p_name": "com.meitu.wheecam",
+    "a_name": "SelfieCity"
+  },
+  {
+    "p_name": "com.meitu.airbrush.vivo",
+    "a_name": "AirBrush 2Go"
+  },
+  {
+    "p_name": "com.meitu.boxxcam",
+    "a_name": "BOXxCAM"
+  },
+  {
+    "p_name": "cn.xender",
+    "a_name": "Xender"
+  },
+  {
+    "p_name": "com.intsig.camscanner",
+    "a_name": "Cam Scanner"
+  },
+  {
+    "p_name": "com.intsig.BCRLite",
+    "a_name": "CamCard Free"
+  },
+  {
+    "p_name": "com.tencent.ludosuperstar",
+    "a_name": "Ludo World"
+  },
+  {
+    "p_name": "com.ngame.allstar.eu",
+    "a_name": "Arena of Valor"
+  },
+  {
+    "p_name": "com.tencent.godgame",
+    "a_name": "Chess Rush"
+  },
+  {
+    "p_name": "com.hcg.cok.gp",
+    "a_name": "Clash of Kings"
+  },
+  {
+    "p_name": "com.hcg.ctw.gp",
+    "a_name": "Clash of Kings:The West"
+  },
+  {
+    "p_name": "com.elex.coq.gp",
+    "a_name": "Clash of Queens"
+  },
+  {
+    "p_name": "com.zw.zombieworld.gp",
+    "a_name": "Zombie World SLG 3D"
+  },
+  {
+    "p_name": "com.hcg.tos.gp",
+    "a_name": "Heroes War"
+  },
+  {
+    "p_name": "com.mobile.legends",
+    "a_name": "Mobile Legends"
+  },
+  {
+    "p_name": "club.fromfactory",
+    "a_name": "ClubFactory"
+  },
+  {
+    "p_name": "com.zzkko",
+    "a_name": "Shein"
+  },
+  {
+    "p_name": "com.romwe",
+    "a_name": "Romwe"
+  },
+  {
+    "p_name": "com.domobile.applockwatcher",
+    "a_name": "AppLock"
+  },
+  {
+    "p_name": "com.uc.vmate",
+    "a_name": "VMate"
+  },
+  {
+    "p_name": "com.dc.hwsj",
+    "a_name": "Game of Sultans"
+  },
+  {
+    "p_name": "com.yottagames.mafiawar",
+    "a_name": "Mafia City"
+  },
+  {
+    "p_name": "com.tencent.mm",
+    "a_name": "Wechat"
+  },
+  {
+    "p_name": "com.tencent.mobileqq",
+    "a_name": "QQ"
+  },
+  {
+    "p_name": "com.baidu.searchbox",
+    "a_name": "Baidu"
+  },
+  {
+    "p_name": "com.security.antivirus.sefeanti",
+    "a_name": "360 Mobile Guard"
+  },
+  {
+    "p_name": "com.taobao.taobao",
+    "a_name": "Taobao"
+  },
+  {
+    "p_name": "com.sina.weibo",
+    "a_name": "Sina Weibo"
+  },
+  {
+    "p_name": "com.weico.international",
+    "a_name": "Weibo"
+  },
+  {
+    "p_name": "com.uc.iflow",
+    "a_name": "UC News"
+  },
+  {
+    "p_name": "com.newsdog",
+    "a_name": "NewsDog"
+  },
+  {
+    "p_name": "com.quvideo.vivavideo.lite",
+    "a_name": "VivaVideo- QU Video Inc"
+  },
+  {
+    "p_name": "com.lbe.parallel.intl",
+    "a_name": "Parallel Space"
+  },
+  {
+    "p_name": "com.apusapps.browser",
+    "a_name": "APUS Browser"
+  },
+  {
+    "p_name": "com.cyberlink.youperfect",
+    "a_name": "Perfect Corp"
+  },
+  {
+    "p_name": "com.HIsecurity.antivirus.litepro",
+    "a_name": "Virus Cleaner (Hi Security Lab)"
+  },
+  {
+    "p_name": "com.cm.browser.downloader.adblock",
+    "a_name": "CM Browser"
+  },
+  {
+    "p_name": "com.mi.global.bbs",
+    "a_name": "Mi Community"
+  },
+  {
+    "p_name": "com.netqin.ps",
+    "a_name": "Vault-Hide"
+  },
+  {
+    "p_name": "com.cyberlink.youcammakeup",
+    "a_name": "YouCam Makeup"
+  },
+  {
+    "p_name": "com.mi.global.shop",
+    "a_name": "Mi Store"
+  },
+  {
+    "p_name": "com.limsky.ramcleaner",
+    "a_name": "DU Battery Saver"
+  },
+  {
+    "p_name": "com.DU.Cleaner.antivirus.cleanphone",
+    "a_name": "DU Cleaner"
+  },
+  {
+    "p_name": "com.baidu.BaiduMap",
+    "a_name": "Baidu Map"
+  },
+  {
+    "p_name": "com.yubitu.android.YubiCollage",
+    "a_name": "Photo Wonder"
+  },
+  {
+    "p_name": "com.tencent.qqmusic",
+    "a_name": "QQ Music"
+  },
+  {
+    "p_name": "com.tencent.androidqqmail",
+    "a_name": "QQ Mail"
+  },
+  {
+    "p_name": "com.etekcity.vesyncplatform",
+    "a_name": "WeSync"
+  },
+  {
+    "p_name": "com.netease.mail",
+    "a_name": "Mail Master"
+  },
+  {
+    "p_name": "com.miui.videoplayer",
+    "a_name": "Mi Video call-Xiaomi"
+  },
+  {
+    "p_name": "com.pleco.chinesesystem",
+    "a_name": "Pleco"
+  },
+  {
+    "p_name": "com.xinlukou.metroman",
+    "a_name": "China Metro"
+  },
+  {
+    "p_name": "com.snowwhiteapps.downloader",
+    "a_name": "All video downloader"
+  },
+  {
+    "p_name": "com.ss.android.ugc.boomlite",
+    "a_name": "Vigo Lite"
+  },
+  {
+    "p_name": "com.youdao.hindict",
+    "a_name": "Udictionary"
+  },
+  {
+    "p_name": "com.videochat.livu",
+    "a_name": "Livu"
+  },
+  {
+    "p_name": "com.asiainno.uplive",
+    "a_name": "Uplive"
+  },
+  {
+    "p_name": "com.funplus.kingofavalon",
+    "a_name": "Kings of Avalon"
+  },
+  {
+    "p_name": "com.diandian.gog",
+    "a_name": "Guns of glory"
+  },
+  {
+    "p_name": "com.igg.castleclash",
+    "a_name": "Castle Cash"
+  },
+  {
+    "p_name": "com.nono.android",
+    "a_name": "NonoLive"
+  },
+  {
+    "p_name": "com.dating.android",
+    "a_name": "Dating.com"
+  },
+  {
+    "p_name": "com.qidian.Int.reader",
+    "a_name": "Web Novel"
+  },
+  {
+    "p_name": "sg.bigo.hellotalk",
+    "a_name": "Hello Yo"
+  },
+  {
+    "p_name": "com.gtarcade.lod",
+    "a_name": "Lagecy of discord"
+  },
+  {
+    "p_name": "com.longtech.lastwars.gp",
+    "a_name": "Last empire"
+  },
+  {
+    "p_name": "com.lilithgame.sgame.gp.oss",
+    "a_name": "Art of conquest"
+  },
+  {
+    "p_name": "com.flashkeyboardtheme",
+    "a_name": "Flash Keyboard"
+  },
+  {
+    "p_name": "free.vpn.unblock.proxy.turbovpn",
+    "a_name": "Turbo VPN"
+  },
+  {
+    "p_name": "com.quvideo.xiaoying",
+    "a_name": "viva Video"
+  },
+  {
+    "p_name": "com.jetstartgames.chess",
+    "a_name": "Cheez"
+  },
+  {
+    "p_name": "com.alibaba.intl.android.apps.poseidon",
+    "a_name": "Alibaba.com"
+  },
+  {
+    "p_name": "com.zhiliaoapp.musically.go",
+    "a_name": "TikTok Lite"
+  },
+  {
+    "p_name": "com.domobile.applock.lite",
+    "a_name": "AppLock lite"
+  },
+  {
+    "p_name": "com.alibaba.aliexpresshd",
+    "a_name": "AliExpress"
+  },
+  {
+    "p_name": "com.alibaba.aliexpress.itao",
+    "a_name": "iTao"
+  },
+  {
+    "p_name": "com.tool.fileexplorer.filemanager.filetransfer",
+    "a_name": "ES File Manager"
+  },
+  {
+    "p_name": "com.file.manager.filebrowser",
+    "a_name": "File Explorer File Manager"
+  },
+  {
+    "p_name": "com.musicplayer.musica.musicapps.playermusic",
+    "a_name": "Music Player"
+  },
+  {
+    "p_name": "com.mipay.in.wallet",
+    "a_name": "mi pay"
+  },
+  {
+    "p_name": "com.duokan.phone.remotecontroller",
+    "a_name": "mi remote control"
+  },
+  {
+    "p_name": "com.banggood.client",
+    "a_name": "banggood"
+  },
+  {
+    "p_name": "com.micredit.in.gp",
+    "a_name": "Mi Credit"
+  },
+  {
+    "p_name": "cn.wps.moffice_eng",
+    "a_name": "WPS Office"
+  },
+  {
+    "p_name": "cn.wps.moffice_i18n",
+    "a_name": "WPS Office Lite"
+  },
+  {
+    "p_name": "cn.wps.pdf",
+    "a_name": "WPS PDF"
+  },
+  {
+    "p_name": "cn.wps.moffice_extra",
+    "a_name": "WPS Office Extra"
+  },
+  {
+    "p_name": "cn.wps.moffice_premium",
+    "a_name": "WPS Premium Subscription"
+  },
+  {
+    "p_name": "cn.wps.pdf.fillsign",
+    "a_name": "WPS PDF Fill"
+  },
+  {
+    "p_name": "om.dewmobile.kuaiya.play",
+    "a_name": "Zapya - File Transfer, Sharing Music Playlist"
+  },
+  {
+    "p_name": "com.dewmobile.kuaiya.web",
+    "a_name": "Zapya WebShare - File Sharing in Web Browser"
+  },
+  {
+    "p_name": "com.dewmobile.zapyago",
+    "a_name": "Zapya Go - From File Transfer to Private Social"
+  },
+  {
+    "p_name": "com.dewmobile.kuaiya.recorder",
+    "a_name": "RecorderZ - Screen Recorder by Zapya"
+  },
+  {
+    "p_name": "com.dewmobile.kuaiya.paintpad.play",
+    "a_name": "Zapya Doodle"
+  },
+  {
+    "p_name": "com.dewmobile.kuaiya.game.airhockey.play",
+    "a_name": "Zapya Air Hockey"
+  },
+  {
+    "p_name": "com.dewmobile.kuaiya.zproj.screenlockz",
+    "a_name": "ScreenLockZ by Zapya"
+  },
+  {
+    "p_name": "com.dewmobile.game",
+    "a_name": "Zapya MiniGame"
+  },
+  {
+    "p_name": "com.dewmobile.kuaibao.gp",
+    "a_name": "MyDearest"
+  },
+  {
+    "p_name": "com.dewmobile.kuaiya.zproj.applockz",
+    "a_name": "AppLockZ by Zapya"
+  },
+  {
+    "p_name": "com.dewmobile.kuaiya.filez",
+    "a_name": "FileZ - Easy File Manager"
+  },
+  {
+    "p_name": "com.alibaba.android.rimet",
+    "a_name": "DingTalk"
+  },
+  {
+    "p_name": "com.alibaba.dingtalk.global",
+    "a_name": "DingTalk Lite"
+  }
+]

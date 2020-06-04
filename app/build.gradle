@@ -20,6 +20,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    buildTypes.each {
+        it.buildConfigField "String", "BLACKLISTED_APP_JSON_URL", "\"https://raw.githubusercontent.com/Bloody-Badboy/Remove-China-Apps/master/china_apps.json\""
+    }
 }
 
 dependencies {
@@ -33,6 +36,7 @@ dependencies {
     implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
 
     implementation 'com.google.android.play:core:1.7.3'
+    implementation 'com.squareup.okhttp3:okhttp:4.7.2'
 
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'

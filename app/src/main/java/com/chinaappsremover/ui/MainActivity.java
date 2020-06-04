@@ -33,7 +33,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.chinaappsremover.AppController;
 import com.chinaappsremover.R;
 import com.chinaappsremover.adapter.ItemlistAdapter;
+import com.chinaappsremover.dbhandler.DataBaseHelper;
 import com.chinaappsremover.listener.OnItemClickListener;
+import com.chinaappsremover.network.ChinaAppsDataDownloader;
+import com.chinaappsremover.network.ChinaAppsDataParser;
+import com.chinaappsremover.utils.NetworkUtils;
+import com.chinaappsremover.utils.Preference;
 import com.chinaappsremover.wrapper.AppInfo;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.play.core.appupdate.AppUpdateInfo;
@@ -47,10 +52,14 @@ import com.google.android.play.core.install.model.UpdateAvailability;
 import com.google.android.play.core.tasks.OnSuccessListener;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+
+import okhttp3.Response;
 
 public class MainActivity extends AppCompatActivity implements OnItemClickListener {
 
@@ -219,7 +228,19 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
         }
     }
 
-    class GetAppsAsync extends AsyncTask<Void, Void, List<AppInfo>> {
+    enum NetworkRefreshState {
+        ONGOING,
+        COMPLETED,
+        FAILED
+    }
+
+    class GetAppsAsync extends AsyncTask<Void, NetworkRefreshState, List<AppInfo>> {
+
+        private Snackbar snackbar;
+
+        GetAppsAsync() {
+            snackbar = Snackbar.make(findViewById(R.id.scan_ui), "Refreshing database from the network...", Snackbar.LENGTH_INDEFINITE);
+        }
 
         protected void onPreExecute() {
             super.onPreExecute();
@@ -228,7 +249,65 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
         }
 
         protected List<AppInfo> doInBackground(Void... voidArr) {
-            return AppController.getDbHelper().isExist(getInstalledApps(), appInfos);
+            DataBaseHelper dbHelper = AppController.getDbHelper();
+            if (NetworkUtils.hasNetworkConnection() && Preference.shouldRefreshData()) {
+                Log.d("MainActivity", "Refreshing database from the network...");
+                publishProgress(NetworkRefreshState.ONGOING);
+                ChinaAppsDataDownloader dataDownloader = ChinaAppsDataDownloader.getInstance(getApplicationContext());
+                try {
+                    Thread.sleep(5000L);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                try {
+                    Response response = dataDownloader.fetch(false);
+                    List<AppInfo> appInfoList = ChinaAppsDataParser.parse(response);
+                    if (appInfoList != null && dbHelper.refreshAppInfos(appInfoList)) {
+                        Log.d("MainActivity", "Refreshed database from the network.");
+                        Preference.updateLastSyncMills();
+                        Preference.setDbInitialized();
+                        publishProgress(NetworkRefreshState.COMPLETED);
+                    } else {
+                        publishProgress(NetworkRefreshState.FAILED);
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            } else {
+                if (Preference.isDbInitialized()) {
+                    Log.d("MainActivity", "DB not initialized, initializing database from local json...");
+                    try {
+                        InputStream stream = getApplicationContext().getAssets().open("china_apps.json");
+                        List<AppInfo> appInfoList = ChinaAppsDataParser.parse(stream);
+                        if (appInfoList != null && dbHelper.refreshAppInfos(appInfoList)) {
+                            Preference.setDbInitialized();
+                            Log.d("MainActivity", "Initialized database from local json.");
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            return dbHelper.isExist(getInstalledApps(), appInfos);
+        }
+
+
+        @Override
+        protected void onProgressUpdate(NetworkRefreshState... values) {
+            super.onProgressUpdate(values);
+            if (values != null && values.length > 0) {
+                NetworkRefreshState networkRefreshState = values[0];
+                if (networkRefreshState == NetworkRefreshState.ONGOING) {
+                    snackbar.show();
+                } else {
+                    snackbar.dismiss();
+                    if (networkRefreshState == NetworkRefreshState.COMPLETED) {
+                        Snackbar.make(findViewById(R.id.scan_ui), "Database refreshed successfully.", Snackbar.LENGTH_SHORT).show();
+                    }else {
+                        Snackbar.make(findViewById(R.id.scan_ui), "Aw, Snap! Something went wrong while refreshing.", Snackbar.LENGTH_SHORT).show();
+                    }
+                }
+            }
         }
 
         protected void onPostExecute(List<AppInfo> list) {

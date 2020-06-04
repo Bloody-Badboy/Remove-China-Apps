@@ -28,7 +28,7 @@ public class CustomFontButton extends AppCompatButton {
             String fontName = a.getString(R.styleable.CustomFontButton_custom_font_btn);
             if (fontName != null) {
                 try {
-                    Typeface myTypeface = Typeface.createFromAsset(getContext().getAssets(), "fonts/" + fontName + ".ttf");
+                    Typeface myTypeface = Typeface.createFromAsset(getContext().getAssets(), "font/" + fontName + ".ttf");
                     setTypeface(myTypeface);
                 } catch (Exception e) {
                     Log.e("failed", e.getMessage());

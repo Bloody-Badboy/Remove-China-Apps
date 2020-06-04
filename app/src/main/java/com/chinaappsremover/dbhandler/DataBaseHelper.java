@@ -1,5 +1,6 @@
 package com.chinaappsremover.dbhandler;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -14,51 +15,81 @@ import java.util.List;
 public class DataBaseHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "rca.db";
     public static final int DATABASE_VERSION = 1;
-    private Context myContext;
-    private SQLiteDatabase sqLiteDatabase = getWritableDatabase();
+
+    private static final String SQL_CREATE_ENTRIES =
+            "CREATE TABLE " + AppInfoEntry.TABLE_NAME + " (" +
+                    AppInfoEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+                    AppInfoEntry.COLUMN_PACKAGE_NAME + " TEXT," +
+                    AppInfoEntry.COLUMN_APP_NAME + " TEXT)";
+
+    private static final String SQL_DELETE_ENTRIES =
+            "DROP TABLE IF EXISTS " + AppInfoEntry.TABLE_NAME;
+
 
     public DataBaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
-        myContext = context;
     }
 
-    public void onCreate(SQLiteDatabase sQLiteDatabase) {
-        Log.w("Db oncrate called", "Db oncreate called");
-        sQLiteDatabase.execSQL("create table apps (id integer primary key autoincrement, p_name text, a_name text);");
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        Log.w("Db oncrate called", "Db oncreate called" + SQL_CREATE_ENTRIES);
+        db.execSQL(SQL_CREATE_ENTRIES);
     }
 
-    public void onUpgrade(SQLiteDatabase sQLiteDatabase, int i, int i2) {
-        myContext.getDatabasePath("dest.sqLiteDatabase");
-    }
-
-    public boolean attach(File file, boolean z) {
-        try {
-            sqLiteDatabase.execSQL("attach database ? as sqLiteDatabase", new String[]{file.getAbsolutePath()});
-            if (!z) {
-                sqLiteDatabase.delete("apps", null, null);
-            }
-            sqLiteDatabase.execSQL("INSERT INTO apps (p_name, a_name) SELECT  p_name, a_name FROM sqLiteDatabase.apps");
-            return file.delete();
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        if (newVersion != oldVersion) {
+            db.execSQL(SQL_DELETE_ENTRIES);
+            onCreate(db);
         }
     }
 
-    public List<AppInfo> isExist(List<AppInfo> list, List<AppInfo> list2) {
-        list2.clear();
-        for (AppInfo next : list) {
-            Cursor rawQuery = sqLiteDatabase.rawQuery("select * from  apps where p_name ='" + next.packageName + "'", null);
+    @Override
+    public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        onUpgrade(db, oldVersion, newVersion);
+    }
+
+
+    public List<AppInfo> isExist(List<AppInfo> allInstalledAppInfoList, List<AppInfo> chinaAppInfoList) {
+        SQLiteDatabase db = getWritableDatabase();
+        chinaAppInfoList.clear();
+        for (AppInfo next : allInstalledAppInfoList) {
+            Cursor rawQuery = db.rawQuery("select * from  apps where p_name ='" + next.packageName + "'", null);
             if (rawQuery != null && rawQuery.moveToFirst()) {
-                list2.add(next);
+                chinaAppInfoList.add(next);
                 while (rawQuery.moveToNext()) {
-                    list2.add(next);
+                    chinaAppInfoList.add(next);
                 }
             }
             if (rawQuery != null) {
                 rawQuery.close();
             }
         }
-        return list2;
+        return chinaAppInfoList;
+    }
+
+    public boolean refreshAppInfos(List<AppInfo> appInfoEntries) {
+        SQLiteDatabase db = getWritableDatabase();
+        db.beginTransaction();
+        try {
+            db.delete(AppInfoEntry.TABLE_NAME, null, null);
+
+            for (AppInfo appInfo : appInfoEntries) {
+
+                ContentValues values = new ContentValues();
+                values.put(AppInfoEntry.COLUMN_APP_NAME, appInfo.appName
+                );
+                values.put(AppInfoEntry.COLUMN_PACKAGE_NAME, appInfo.packageName);
+
+                db.insertOrThrow(AppInfoEntry.TABLE_NAME, null, values);
+            }
+            db.setTransactionSuccessful();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            db.endTransaction();
+        }
+        return false;
     }
 }

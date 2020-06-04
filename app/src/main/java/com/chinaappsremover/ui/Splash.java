@@ -8,7 +8,6 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.chinaappsremover.R;
-import com.chinaappsremover.dbhandler.DbUtils;
 
 public class Splash extends AppCompatActivity {
 
@@ -21,7 +20,6 @@ public class Splash extends AppCompatActivity {
             supportActionBar.hide();
         }
 
-        DbUtils.attachDB(this);
         new Handler().postDelayed(new Runnable() {
             public void run() {
                 Splash splash = Splash.this;

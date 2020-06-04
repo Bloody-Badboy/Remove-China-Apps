@@ -28,7 +28,7 @@ public class CustomFontTextView extends AppCompatTextView {
             String fontName = a.getString(R.styleable.CustomFontTextView_custom_font);
             if (fontName != null) {
                 try {
-                    Typeface myTypeface = Typeface.createFromAsset(getContext().getAssets(), "fonts/" + fontName + ".ttf");
+                    Typeface myTypeface = Typeface.createFromAsset(getContext().getAssets(), "font/" + fontName + ".ttf");
                     setTypeface(myTypeface);
                 } catch (Exception e) {
                     Log.e("failed", e.getMessage());
